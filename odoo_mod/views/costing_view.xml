@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <!-- Form view for the Costing Estimator model -->
+        <record id="view_form_costing_estimator" model="ir.ui.view">
+            <field name="name">costing.estimator.form</field>
+            <field name="model">costing.estimator</field>
+            <field name="arch" type="xml">
+                <form string="Costing Estimator">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="raw_material_cost"/>
+                            <field name="tooling_cost"/>
+                            <field name="labor_cost"/>
+                            <field name="total_cost" readonly="1"/>  <!-- Total cost is read-only -->
+                            <field name="supplier_ids" widget="many2many_tags"/> <!-- Suppliers -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action to open the form view -->
+        <record id="action_costing_estimator" model="ir.actions.act_window">
+            <field name="name">Costing Estimator</field>
+            <field name="res_model">costing.estimator</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_form_costing_estimator"/>
+        </record>
+
+        <!-- Menu item to access the Costing Estimator form -->
+        <menuitem id="menu_costing_estimator" name="Costing Estimator" action="action_costing_estimator" parent="base.menu_custom"/>
+    </data>
+</odoo>
