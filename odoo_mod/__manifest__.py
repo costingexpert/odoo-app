@@ -1,5 +1,5 @@
 {
-    'name': 'Costing Estimator',
+    'name': 'odoo_mod',
     'version': '16.0.1.0.0',
     'category': 'Tools',
     'summary': 'A tool for estimating manufacturing costs.',
@@ -17,3 +17,4 @@
     'application': True,
     'auto_install': False,
 }
+
